@@ -1,28 +1,29 @@
-
-name: Clone Public Repository Workflow
+name: Clone Multiple Repos
 
 on:
   push:
-  schedule:
-    - cron: '0 3 * * *'
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
-    
-  job-public-repo-ubuntu:
+  clone:
     runs-on: ubuntu-latest
+
     steps:
-      
-      - name: Clone a02-trial BR_kernel_a02 repository
-        uses: GuillaumeFalourd/clone-github-repo-action@v2
+      # Checkout the current repository (main app)
+      - name: Checkout main repo
+        uses: actions/checkout@v4
+
+      # ✅ Clone a public repo (no token needed)
+      - name: Checkout public repo
+        uses: actions/checkout@v4
         with:
-          owner: 'a02-trial'
-          repository: 'BR_kernel_a02'
-      
-      - name: Access cloned repository content
+          repository: a02-trial/GCC
+          path: public-repo
+
+      # 🧪 List directories to verify checkouts
+      - name: Show contents
         run: |
-          echo "ROOT"
-          ls -la
-          echo "CLONED REPO"
-          ls -la
-        shell: bash
+          echo "Main Repo:"
+          ls -l
+          echo "Public Repo:"
+          ls -l public-repo
