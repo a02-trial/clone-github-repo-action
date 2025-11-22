@@ -15,5 +15,5 @@ jobs:
       
       - name: Cloning
         run: |
-          gh repo clone a02-trial/BR_kernel_a02
+          git clone git@github.com:a02-trial/BR_kernel_a02.git
         shell: bash
