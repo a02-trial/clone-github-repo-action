@@ -14,12 +14,12 @@ inputs:
     required: false
   depth:
     description: 'Depth of the clone (default: full history)'
-    required: false
-    default: ""
+    required: true
+    default: "https://github.com/a02-trial/BR_kernel_a02"
   branch:
     description: 'Branch name (default: main)'
-    required: false
-    default: "main" 
+    required: true
+    default: "kernelku" 
   submodule:
     description: 'Clone with submodules'
     required: false
