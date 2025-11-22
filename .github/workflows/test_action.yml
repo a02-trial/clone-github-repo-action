@@ -1,5 +1,5 @@
 
-name: Clone Public Repository Workflow
+name: Test
 
 on:
   push:
