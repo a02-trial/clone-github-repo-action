@@ -13,47 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
-        uses: GuillaumeFalourd/clone-github-repo-action@main
+      - name: Clone a02-trial BR_kernel_a02 repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2
         with:
-          owner: 'GuillaumeFalourd'
-          repository: 'poc-github-actions'
-      
-      - name: Access cloned repository content
-        run: |
-          echo "ROOT"
-          ls -la
-          echo "CLONED REPO"
-          cd poc-github-actions
-          ls -la
-
-  job-public-repo-macos:
-    runs-on: macos-latest
-    steps:
-      
-      - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
-        uses: GuillaumeFalourd/clone-github-repo-action@main
-        with:
-          owner: 'GuillaumeFalourd'
-          repository: 'poc-github-actions'
-      
-      - name: Access cloned repository content
-        run: |
-          echo "ROOT"
-          ls -la
-          echo "CLONED REPO"
-          cd poc-github-actions
-          ls -la
-
-  job-public-repo-windows:
-    runs-on: windows-latest
-    steps:
-      
-      - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
-        uses: GuillaumeFalourd/clone-github-repo-action@main
-        with:
-          owner: 'GuillaumeFalourd'
-          repository: 'poc-github-actions'
+          owner: 'a02-trial'
+          repository: 'BR_kernel_a02'
       
       - name: Access cloned repository content
         run: |
