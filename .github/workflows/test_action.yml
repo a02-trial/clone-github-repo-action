@@ -13,19 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
-        uses: whyakari/github-repo-action@v3.1
-        with:
-          depth: 1
-          branch: 'kernelku'
-          owner: 'a02-trial'
-          repository: 'BR_kernel_a02'
-      
-      - name: Access cloned repository content
+      - name: Cloning
         run: |
-          echo "ROOT"
-          ls -la
-          echo "CLONED REPO"
-          cd poc-github-actions
-          ls -la
+          gh repo clone a02-trial/BR_kernel_a02
         shell: bash
